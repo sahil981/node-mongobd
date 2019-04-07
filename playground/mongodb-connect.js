@@ -11,15 +11,15 @@ MongoClient.connect('mongodb://localhost:27017/TotoApp', (err, client)=>{
     console.log('Connected to mongodb server');
     var db = client.db('mytestingdb');
 
-    // db.collection('Todos').insertOne({
-    //     name: 'Sahil Deep Mehra',
-    //     location: 'Himachal Pradesh'
-    // }, (err, result)=> {
-    //     if(err){
-    //         return console.log('Failed', err);
-    //     }
-    //     console.log(JSON.stringify(result.ops, undefined , 2));
-    // });
+    db.collection('Todos').insertOne({
+        name: 'Sahil Deep Mehra',
+        location: 'Himachal Pradesh'
+    }, (err, result)=> {
+        if(err){
+            return console.log('Failed', err);
+        }
+        console.log(JSON.stringify(result.ops, undefined , 2));
+    });
 
     // db.collection('Users').insertOne({
     //     name: 'Sahil Deep Mehra',
